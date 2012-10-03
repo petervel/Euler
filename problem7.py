@@ -23,6 +23,8 @@ def main():
 	for i in list:
 		if i >= 2:
 			index += 1
-			print("{0}: {1}".format(index, i))
+		if index == 10001:
+			print(i)
+			return
 
 main()
