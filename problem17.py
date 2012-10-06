@@ -14,11 +14,11 @@ def digit_length(number):
 		return 0
 
 def tens_length(number):
-	if number == 2 or number == 3 or number == 9:
+	if number == 2 or number == 3 or number == 9 or number == 8:
 		return 6
 	elif number == 4 or number == 5 or number == 6:
 		return 5
-	elif number == 7 or number == 8:
+	elif number == 7:
 		return 7
 	else:
 		return 0
@@ -54,9 +54,9 @@ def text_length_remainder(number):
 		return 3
 	elif number == 11 or number == 12:
 		return 6
-	elif number == 13 or number == 14 or number == 19:
+	elif number == 13 or number == 14 or number == 19 or number == 18:
 		return 8
-	elif number == 15 or number == 16 or number == 18:
+	elif number == 15 or number == 16:
 		return 7
 	elif number == 17:
 		return 9
@@ -74,7 +74,9 @@ def text_length(number):
 def main():
 	sum = 0
 	for i in range(1, 1001):
-		sum += text_length(i)
+		length = text_length(i)
+		sum += length
+		print("{0} : {1}".format(i, length))
 
 	print("sum : {0}".format(sum))
 
