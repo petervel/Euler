@@ -6,12 +6,11 @@ def is_palindrome(string):
 		return True
 	if string[0] != string[-1]:
 		return False
-
 	return is_palindrome(string[1:-1])
 
 def is_double_palindrome(number):
 	decimal = str(number)
-	binary = bin(number)[2:]
+	binary = bin(number)[2:] #remove the "0b" prefix
 	return is_palindrome(decimal) and is_palindrome(binary)
 
 def main():
