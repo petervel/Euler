@@ -1,3 +1,5 @@
+#!/usr/bin/python
+__author__ = 'peter.vel'
 
 def get_name_score(name):
     sum = 0

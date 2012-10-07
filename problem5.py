@@ -1,3 +1,5 @@
+#!/usr/bin/python
+__author__ = 'peter.vel'
 
 def divisible_by_all(number):
     revRange = range(2,20)

@@ -1,3 +1,6 @@
+#!/usr/bin/python
+__author__ = 'peter.vel'
+
 def square_of_sums(rng):
     sum = 0
     for i in rng:

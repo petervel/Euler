@@ -1,3 +1,5 @@
+#!/usr/bin/python
+__author__ = 'peter.vel'
 
 def next_layer(layer):
     prev = 0

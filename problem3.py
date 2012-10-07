@@ -1,3 +1,6 @@
+#!/usr/bin/python
+__author__ = 'peter.vel'
+
 def is_divisible_by(number, divider):
     if number < divider:
         return False

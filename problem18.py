@@ -1,3 +1,6 @@
+#!/usr/bin/python
+__author__ = 'peter.vel'
+
 data = [[75],
         [95, 64],
         [17, 47, 82],

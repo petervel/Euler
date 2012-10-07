@@ -1,3 +1,6 @@
+#!/usr/bin/python
+__author__ = 'peter.vel'
+
 def list_contains(list, item):
 	for i in list:
 		if i == item:

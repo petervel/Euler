@@ -1,3 +1,5 @@
+#!/usr/bin/python
+__author__ = 'peter.vel'
 
 def best_horizontal(data):
     highest = 0

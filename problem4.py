@@ -1,3 +1,6 @@
+#!/usr/bin/python
+__author__ = 'peter.vel'
+
 def is_palindrome(number):
     if len(number) == 0:
         return True
