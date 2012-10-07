@@ -1,13 +1,14 @@
 #!/usr/bin/python
 __author__ = 'peter.vel'
 
+from datetime import datetime
 
 def main():
 	sum = 0
-	for i in range(0, len(data)):
-		sum += data[i]
+	for i in data:
+		sum += i
 
-	print sum
+	print(str(sum)[0:10])
 
 data = [
 37107287533902102798797998220837590246510135740250,
