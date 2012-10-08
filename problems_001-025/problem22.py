@@ -34,4 +34,4 @@ def main(filename):
     sum = sum_scores(data)
     print(sum)
 
-main("data/problem22/names.txt")
+main("data/names.txt")
