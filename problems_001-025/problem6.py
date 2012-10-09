@@ -1,8 +1,6 @@
 #!/usr/bin/python
 __author__ = 'peter.vel'
 
-from datetime import datetime
-
 def square_of_sums(rng):
 	return sum(x for x in rng) ** 2
 
