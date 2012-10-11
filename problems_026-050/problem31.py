@@ -4,7 +4,6 @@ __author__ = 'peter.vel'
 coins = [200, 100, 50, 20, 10, 5, 2, 1]
 
 def count_ways(cents, coin_index):
-	if cents < 0: return 0
 	if cents == 0: return 1
 
 	sum = 0
