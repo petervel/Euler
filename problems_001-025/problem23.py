@@ -11,7 +11,7 @@ def sum_divisors(number):
 			sum += number / i
 
 	if sqrt == int(sqrt):
-		sum -= sqrt #we added it twice
+		sum -= sqrt #added this one twice
 
 	return sum
 
