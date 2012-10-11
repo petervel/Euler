@@ -8,7 +8,7 @@ def count_ways(cents, coin_index):
 
 	sum = 0
 	for i in range(coin_index, len(coins)):
-		if coins[i] <= cents:
+		if cents >= coins[i]:
 			sum += count_ways(cents - coins[i], i)
 	return sum
 
