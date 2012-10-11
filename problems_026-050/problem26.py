@@ -3,23 +3,6 @@ __author__ = 'peter.vel'
 
 from decimal import *
 
-def filter_prime(prime, list):
-	n = 2 * prime
-	while n < len(list):
-		list[n] = False
-		n += prime
-
-def sieve(list):
-	halfway = int(len(list)/2) + 1
-	for i in range(2, halfway):
-		filter_prime(i, list)
-	return list
-
-def check_primes(max):
-	list = [True] * max
-	sieve(list)
-	return list
-
 def is_repeated(string, length):
 	for i in range(1, int(len(string) / length)):
 		if string[0 : length] != string[i * length : (i+1) * length]:
