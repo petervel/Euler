@@ -1,6 +1,7 @@
 #!/usr/bin/python
 __author__ = 'peter.vel'
 
+from datetime import datetime
 from decimal import *
 
 def is_repeated(string, length):
