@@ -16,32 +16,32 @@ def sieve(list):
 
 def check_primes(max):
 	list = [True] * max
+	list[1] = False
 	sieve(list)
 	return list
 
-is_prime = check_primes(10000)
+is_prime = check_primes(1000000)
 
-list = []
-
-def check_number(number):
-	if not number in list:
-		if not is_prime[number]:
-			return False
-		list.append(number)
-	return True
-
-def is_interesting(number):
+def scan_left(number):
+	if len(number) == 0:
+		return True
 	if not is_prime[int(number)]:
 		return False
-	if not check_number(int(number[1:])):
+	return scan_left(number[:-1])
+
+def scan_right(number):
+	if len(number) == 0:
+		return True
+	if not is_prime[int(number)]:
 		return False
-	if not check_number(int(number[:1])):
-		return False
-	return True
+	return scan_right(number[1:])
+
+def is_interesting(number):
+	return is_prime[int(number)] and scan_right(number[1:]) and scan_left(number[:-1])
 
 def main():
 	sum = 0
-	is_interesting("179")
+	is_interesting("7331")
 	for i in range(10, len(is_prime)):
 		if is_interesting(str(i)):
 			print("found {0}".format(i))
