@@ -18,3 +18,7 @@ def check_primes(max):
 	list = [True] * max
 	sieve(list)
 	return list
+
+max = 50000 #replace this with max prime
+primes = check_primes(max)
+primes_list = [i for i in range(1, len(primes)) if primes[i]]
