@@ -2,32 +2,34 @@
 __author__ = 'peter.vel'
 
 data = []
+solution = []
+
 file = open("data/matrix.txt")
 lines = file.readlines()
 for line in lines:
 	line = line.strip()
 	list = line.split(",")
 	data.append([int(i) for i in list])
+	solution.append([0] * len(list))
 
 rows = len(data)-1
 cols = len(data)-1
 
-def shortest_path(x, y):
-	if x == cols and y == rows:
-		return data[x][y]
-
-	best = 1000000000000
-	if x < cols:
-		best = shortest_path(x+1, y)
-
-	if y < rows:
-		option2 = shortest_path(x, y+1)
-		if option2 < best:
-			best = option2
-
-	return data[x][y] + best
+def calc():
+	for row in range(rows+1):
+		for col in range(cols+1):
+			shortest = 0
+			if row != 0:
+				above = solution[row-1][col]
+				shortest = above
+			if col != 0:
+				left = solution[row][col-1]
+				if shortest == 0 or left < shortest:
+					shortest = left
+			solution[row][col] = shortest + data[row][col]
+	return solution[rows][cols]
 
 def main():
-	print(shortest_path(0,0))
+	print(calc())
 
 main()
