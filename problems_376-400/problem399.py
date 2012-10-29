@@ -17,26 +17,18 @@ class HugeNumber:
 
 	def add(self, other):
 		converted_head = self.head
-		exp = other.exp #assume lowest exponent
+		exp = other.exp				#assume lowest exponent
 		if self.exp > other.exp:
-			converted_head *= 10 #convert potentially larger number to lower exp
+			converted_head *= 10	#convert potentially larger number to lower exp
 
 		head = converted_head + other.head
-		while head > 10:	#convert to standard notation
+		while head > 10:			#convert to standard notation
 			head /= 10
-			exp += 1		#every time we move the period, exp goes up 1
+			exp += 1				#every time we move the period, exp goes up 1
 
 		tail = (self.tail + other.tail) % TAIL_MAX
 
 		return HugeNumber(head, exp, tail)
-
-	def is_squarefree(self):
-		for i in SQUARES:
-			if i >= self.tail:
-				break
-			if self.tail %  i == 0:
-				return False
-		return True
 
 	def __str__(self):
 		return "{0}e{1} ... {2}".format(self.head, self.exp, self.tail)
@@ -52,8 +44,6 @@ def main(count):
 		next = cur.add(prev)
 		prev = cur
 		cur = next
-		#if cur.is_squarefree():
-		print("{0}: {1}".format(i, cur))
 		i += 1
 	print("{0}: {1}".format(i, cur))
 

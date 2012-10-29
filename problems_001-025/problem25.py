@@ -4,6 +4,8 @@ __author__ = 'peter.vel'
 def digit_count(number):
 	return len(str(number))
 
+def next_fibonacci(prev, cur):
+
 def first_fibonacci_with_digits(digits):
 	i = 2
 	prev = 1
