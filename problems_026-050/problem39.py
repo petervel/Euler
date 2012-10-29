@@ -11,11 +11,13 @@ def count_solutions(p):
 	return count
 
 def main():
-	best, highest = 0
+	best = 0
+	highest = 0
 	for i in range(1, 1000):
 		solutions = count_solutions(i)
 		if solutions > highest:
-			best, highest = i, solutions
+			best = i
+			highest = solutions
 			print("new record! {0} with {1} solutions".format(best, highest))
 	print("{0} is record holder with {1} solutions".format(best, highest))
 
