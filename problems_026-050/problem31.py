@@ -3,13 +3,13 @@ __author__ = 'peter.vel'
 
 coins = [200, 100, 50, 20, 10, 5, 2, 1]
 
-def count_ways(cents, coin_index):
-	if cents == 0: return 1
+def count_ways(remaining_cents, coin_index):
+	if remaining_cents == 0: return 1 #found 1 way to pay
 
-	sum = 0
+	ways = 0
 	for i in range(coin_index, len(coins)):
-		if cents >= coins[i]:
-			sum += count_ways(cents - coins[i], i)
-	return sum
+		if remaining_cents >= coins[i]:
+			ways += count_ways(remaining_cents - coins[i], i)
+	return ways
 
 print(count_ways(200, 0))
